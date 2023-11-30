@@ -2,8 +2,6 @@ from anytree import findall_by_attr, PreOrderIter
 from .create import Creator
 from .performance_function import PerformanceFunction
 
-# 3rd test
-
 
 class BranchingFramework:
 
