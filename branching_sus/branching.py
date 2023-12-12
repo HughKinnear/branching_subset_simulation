@@ -2,7 +2,7 @@ from anytree import findall_by_attr, PreOrderIter
 from .create import Creator
 from .performance_function import PerformanceFunction
 
-#
+
 class BranchingFramework:
 
     def __init__(self,
@@ -31,7 +31,6 @@ class BranchingFramework:
                                dimension=dimension)
         self.initial_level = None
 
-
     def run(self):
         self.initial_level = self.creator.create_initial()
         while not self.stopper.is_stop(self.leaves):
@@ -40,10 +39,8 @@ class BranchingFramework:
             indicators = self.partitioner.get_indicators_for_level(current_level)
             self.creator.create(indicators, current_level)
 
-
     def find(self, name):
         return findall_by_attr(self.initial_level, name)[0]
-
 
     @property
     def leaves(self):
@@ -58,4 +55,3 @@ class BranchingFramework:
     def all_samples(self):
         return [samp for level in self.all_levels
                 for samp in level.sample_list]
-
